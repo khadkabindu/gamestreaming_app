@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
+class BrowseScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _BrowseScreenState createState() => _BrowseScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+class _BrowseScreenState extends State<BrowseScreen> with TickerProviderStateMixin {
   TabController tabController;
 
   @override

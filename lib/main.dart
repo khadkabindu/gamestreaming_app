@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gamestreaming_app/home_screen.dart';
+import 'package:flutter_gamestreaming_app/browse_screen.dart';
+
+import 'explore_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,25 +36,22 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   List<Widget> _widgetOption = <Widget>[
-    HomeScreen(),
+    ExploreScreen(),
     Center(
       child: Text(
-        "favorites",
+        "Favorites",
         style: TextStyle(color: Colors.white),
       ),
     ),
-    Center(
-      child: Text(
-        "Browse",
-        style: TextStyle(color: Colors.white),
-      ),
-    ),
+    BrowseScreen(),
+
     Center(
       child: Text(
         "Profile",
         style: TextStyle(color: Colors.white),
       ),
     ),
+
   ];
 
   @override
