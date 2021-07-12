@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-class CustomAppBar extends StatelessWidget {
+import 'package:flutter_gamestreaming_app/search_content.dart';
 
+class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -27,9 +28,14 @@ class CustomAppBar extends StatelessWidget {
         SizedBox(
           width: 15,
         ),
-        Icon(
-          Icons.search,
-          color: Colors.white,
+        GestureDetector(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> SearchContent()));
+          },
+          child: Icon(
+            Icons.search,
+            color: Colors.white,
+          ),
         ),
       ],
     );
