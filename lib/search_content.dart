@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SearchContent extends StatefulWidget {
+class SearchField extends StatefulWidget {
   @override
-  _SearchContentState createState() => _SearchContentState();
+  _SearchFieldState createState() => _SearchFieldState();
 }
 
-class _SearchContentState extends State<SearchContent> {
+class _SearchFieldState extends State<SearchField> {
   TextEditingController _controller = TextEditingController();
 
   @override
@@ -43,11 +43,20 @@ class _SearchContentState extends State<SearchContent> {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     suffixIcon: _controller.text.isNotEmpty
-                        ? IconButton(
-                            icon: Icon(Icons.clear, size: 16, color: Colors.white,),
-                            onPressed: () {
-                              _controller.clear();
-                            },
+                        ? Container(
+                            child: GestureDetector(
+                              onTap: () {
+                                _controller.clear();
+                              },
+                              child: Icon(
+                                Icons.clear,
+                                size: 16,
+                                color: Colors.white,
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                                color: Colors.grey, shape: BoxShape.circle),
+                            width: 20,
                           )
                         : null,
                   ),
@@ -55,8 +64,47 @@ class _SearchContentState extends State<SearchContent> {
               ),
             ],
           ),
+          SizedBox(height: 10,),
+          SearchContent(),
         ],
       ),
     ));
+  }
+}
+
+class SearchContent extends StatefulWidget {
+  @override
+  _SearchContentState createState() => _SearchContentState();
+}
+
+class _SearchContentState extends State<SearchContent> with TickerProviderStateMixin{
+  TabController tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    tabController = TabController(length: 4, vsync: this);
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+
+        TabBar(
+          controller: tabController,
+          isScrollable: true,
+          labelColor: Colors.white,
+          unselectedLabelColor: Color(0xff3c4046),
+          indicatorSize: TabBarIndicatorSize.label,
+          indicatorColor: Colors.grey,
+          tabs: [
+            Text("  Top  "),
+            Text("  Channel  "),
+            Text("  Categories  "),
+            Text("  Past Videos  ")
+          ],
+        ),
+      ],
+    );
   }
 }

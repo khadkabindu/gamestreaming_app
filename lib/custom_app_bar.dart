@@ -30,7 +30,7 @@ class CustomAppBar extends StatelessWidget {
         ),
         GestureDetector(
           onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> SearchContent()));
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> SearchField()));
           },
           child: Icon(
             Icons.search,
