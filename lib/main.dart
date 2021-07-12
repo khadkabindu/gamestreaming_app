@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 label: ""),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.browser_not_supported,
+                Icons.search,
                 color: Colors.white,
               ),
               label: "",

@@ -50,13 +50,6 @@ class ExploreScreen extends StatelessWidget {
                       Icons.chat_bubble_outline,
                       color: Colors.white,
                     ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Icon(
-                      Icons.search_rounded,
-                      color: Colors.white,
-                    ),
                   ],
                 ),
                 SizedBox(
