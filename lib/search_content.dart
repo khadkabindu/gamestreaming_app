@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'channel_list.dart';
+
 class SearchField extends StatefulWidget {
   @override
   _SearchFieldState createState() => _SearchFieldState();
@@ -118,6 +120,8 @@ class _SearchContentState extends State<SearchContent>
         Padding(
           padding: EdgeInsets.all(15),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -142,83 +146,19 @@ class _SearchContentState extends State<SearchContent>
                 category: "League of Legends",
                 followers: "255.8",
               ),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               ChannelList(
                   imagePath: "images/t1logo.jpg",
                   channelName: "T1",
                   category: "League of Legends",
                   followers: "116.34"),
+              SizedBox(height: 25,),
+              Text( "PEOPLE SEARCHING ALSO WATCHED",
+                style: TextStyle(color: Colors.white, fontSize: 16),)
             ],
           ),
-        ),
-      ],
-    );
-  }
-}
-
-class ChannelList extends StatelessWidget {
-  final String imagePath;
-  final String channelName;
-  final String category;
-
-  final String followers;
-
-  const ChannelList(
-      {Key key,
-      @required this.imagePath,
-      @required this.channelName,
-      @required this.category,
-      @required this.followers})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        CircleAvatar(
-          radius: 37,
-          backgroundColor: Colors.white,
-          backgroundImage: AssetImage(imagePath),
-        ),
-        SizedBox(
-          width: 13,
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Text(
-                  channelName,
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  width: 13,
-                ),
-                Icon(
-                  Icons.verified,
-                  color: Colors.red,
-                  size: 16,
-                )
-              ],
-            ),
-            SizedBox(
-              height: 6,
-            ),
-            Text(
-              category,
-              style: TextStyle(color: Colors.grey),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Text(
-              "${followers}K Followers",
-              style: TextStyle(color: Colors.grey),
-            )
-          ],
         ),
       ],
     );
