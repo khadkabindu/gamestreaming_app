@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gamestreaming_app/custom_app_bar.dart';
 
 class BrowseScreen extends StatefulWidget {
   @override
@@ -43,36 +44,7 @@ class _BrowseScreenState extends State<BrowseScreen> with TickerProviderStateMix
             SizedBox(
               height: 5,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Icon(
-                  Icons.connected_tv,
-                  color: Colors.white,
-                ),
-                SizedBox(
-                  width: 15,
-                ),
-                Icon(
-                  Icons.notifications_none_rounded,
-                  color: Colors.white,
-                ),
-                SizedBox(
-                  width: 15,
-                ),
-                Icon(
-                  Icons.chat_bubble_outline,
-                  color: Colors.white,
-                ),
-                SizedBox(
-                  width: 15,
-                ),
-                Icon(
-                  Icons.search_rounded,
-                  color: Colors.white,
-                ),
-              ],
-            ),
+            CustomAppBar(),
             SizedBox(
               height: 5,
             ),

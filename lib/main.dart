@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gamestreaming_app/browse_screen.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'explore_screen.dart';
 
@@ -80,8 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 label: ""),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.search,
+              icon: FaIcon(
+                Icons.web_asset,
                 color: Colors.white,
               ),
               label: "",
