@@ -62,12 +62,18 @@ class _BrowseScreenState extends State<BrowseScreen> with TickerProviderStateMix
               width: 250,
               child: TabBar(
                 controller: tabController,
+                indicatorColor: Colors.grey,
 
                 tabs: [
                   Text("Categories"),
                   Text("Live Channels"),
                 ],
               ),
+            ),
+            Container(
+              height: 0.5,
+              width: MediaQuery.of(context).size.width,
+              color: Colors.grey,
             ),
             SizedBox(
               height: 25,

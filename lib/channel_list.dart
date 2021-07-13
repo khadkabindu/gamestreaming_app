@@ -21,7 +21,7 @@ class ChannelList extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         CircleAvatar(
-          radius: 44,
+          radius: 47,
           backgroundColor: Colors.white,
           backgroundImage: AssetImage(imagePath),
         ),

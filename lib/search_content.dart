@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gamestreaming_app/recommended_videos_card.dart';
 
 import 'channel_list.dart';
 
@@ -154,9 +155,34 @@ class _SearchContentState extends State<SearchContent>
                   channelName: "T1",
                   category: "League of Legends",
                   followers: "116.34"),
-              SizedBox(height: 25,),
-              Text( "PEOPLE SEARCHING ALSO WATCHED",
-                style: TextStyle(color: Colors.white, fontSize: 16),)
+              SizedBox(
+                height: 25,
+              ),
+              Text(
+                "PEOPLE SEARCHING ALSO WATCHED",
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              RecommendedVideoCard(),
+              SizedBox(
+                height: 18,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "CATEGORIES",
+                    style: TextStyle(color: Colors.white, fontSize: 15),
+                  ),
+                  Icon(
+                    Icons.arrow_forward_ios_outlined,
+                    color: Colors.white,
+                    size: 15,
+                  )
+                ],
+              ),
             ],
           ),
         ),
