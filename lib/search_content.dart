@@ -56,21 +56,16 @@ class _SearchFieldState extends State<SearchField> {
                           color: Colors.grey
                         ),
                         suffixIcon: _controller.text.isNotEmpty
-                            ? Container(
-                                child: GestureDetector(
-                                  onTap: () {
-                                    _controller.clear();
-                                  },
-                                  child: Icon(
-                                    Icons.clear,
-                                    size: 16,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                decoration: BoxDecoration(
-                                    color: Colors.grey, shape: BoxShape.circle),
-                                width: 20,
-                              )
+                            ? GestureDetector(
+                              onTap: () {
+                                _controller.clear();
+                              },
+                              child: Icon(
+                                Icons.clear,
+                                size: 16,
+                                color: Colors.white,
+                              ),
+                            )
                             : null,
                       ),
                     ),
