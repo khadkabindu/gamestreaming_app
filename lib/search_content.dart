@@ -11,6 +11,8 @@ class SearchField extends StatefulWidget {
 class _SearchFieldState extends State<SearchField> {
   TextEditingController _controller = TextEditingController();
 
+  bool category = false;
+
   @override
   void initState() {
     super.initState();
@@ -24,53 +26,68 @@ class _SearchFieldState extends State<SearchField> {
     return SafeArea(
         child: Scaffold(
       backgroundColor: Colors.black,
-      body: Column(
+      body: ListView(
+        shrinkWrap: true,
+        scrollDirection: Axis.vertical,
         children: [
-          Row(
+          Column(
             children: [
-              IconButton(
-                icon: Icon(
-                  Icons.arrow_back_ios_rounded,
-                  size: 18,
-                  color: Colors.white,
-                ),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-              Container(
-                width: 344,
-                child: TextField(
-                  controller: _controller,
-                  style: TextStyle(color: Colors.grey),
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    suffixIcon: _controller.text.isNotEmpty
-                        ? Container(
-                            child: GestureDetector(
-                              onTap: () {
-                                _controller.clear();
-                              },
-                              child: Icon(
-                                Icons.clear,
-                                size: 16,
-                                color: Colors.white,
-                              ),
-                            ),
-                            decoration: BoxDecoration(
-                                color: Colors.grey, shape: BoxShape.circle),
-                            width: 20,
-                          )
-                        : null,
+              Row(
+                children: [
+                  IconButton(
+                    icon: Icon(
+                      Icons.arrow_back_ios_rounded,
+                      size: 18,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                   ),
-                ),
+                  Container(
+                    width: 344,
+                    child: TextField(
+                      controller: _controller,
+                      style: TextStyle(color: Colors.grey),
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Search",
+                        hintStyle: TextStyle(
+                          color: Colors.grey
+                        ),
+                        suffixIcon: _controller.text.isNotEmpty
+                            ? Container(
+                                child: GestureDetector(
+                                  onTap: () {
+                                    _controller.clear();
+                                  },
+                                  child: Icon(
+                                    Icons.clear,
+                                    size: 16,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                    color: Colors.grey, shape: BoxShape.circle),
+                                width: 20,
+                              )
+                            : null,
+                      ),
+                    ),
+                  ),
+                ],
               ),
+              SizedBox(
+                height: 10,
+              ),
+              _controller.text == "league of legends"
+                  ? SearchContent()
+                  : Container(
+                      height: 0,
+                      width: 0,
+                    )
             ],
           ),
-          SizedBox(
-            height: 10,
-          ),
-          SearchContent(),
         ],
       ),
     ));
